@@ -20,7 +20,7 @@ const Header = () => {
     </>
     return (
         <div>
-            <div className="navbar flex items-center bg-teal-200 p-3 rounded-b-lg top-0 mb-4">
+            <div className="navbar flex items-center bg-black text-white p-3 rounded-b-lg top-0 mb-4">
             <div className="navbar-start flex">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -48,7 +48,7 @@ const Header = () => {
                 {user?.email ? <>
                     <button className="btn btn-outline btn-neutral" /*onClick={handleLogOut}*/>Logout</button>
                 </> :
-                    <Link to='/login'><button className="btn btn-sm md:btn-md btn-outline btn-neutral">Login</button></Link>}
+                    <Link to='/login'><button className="btn btn-sm md:btn-md btn-outline text-white btn-neutral">Login</button></Link>}
             </div>
         </div>
         </div>

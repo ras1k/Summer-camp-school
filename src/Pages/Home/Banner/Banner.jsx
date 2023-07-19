@@ -3,11 +3,6 @@ import HeroSlider, { MenuNav, Overlay, Slide } from "hero-slider";
 import { Fade } from "react-awesome-reveal";
 import './Banner.css'
 
-// https://i.ibb.co/8XTD1RJ/john-matychuk-g-UK3l-A3-K7-Yo-unsplash.jpg
-// https://i.ibb.co/gPP2YWf/jordan-whitfield-Bhf-E1-Igcs-A8-unsplash.jpg
-// https://i.ibb.co/0mYBXGY/marius-masalar-r-POm-LGwai2w-unsplash.jpg
-// https://i.ibb.co/djb2Mx7/wes-hicks-MEL-j-Jnm7-RQ-unsplash-1.jpg
-
 const piano = "https://i.ibb.co/gPP2YWf/jordan-whitfield-Bhf-E1-Igcs-A8-unsplash.jpg";
 const drums = "https://i.ibb.co/8XTD1RJ/john-matychuk-g-UK3l-A3-K7-Yo-unsplash.jpg";
 const guitars = "https://i.ibb.co/djb2Mx7/wes-hicks-MEL-j-Jnm7-RQ-unsplash-1.jpg";
@@ -17,7 +12,7 @@ const bass = "https://i.ibb.co/DKKh8D0/derek-truninger-u-Lit-Vttk-C7o-unsplash.j
 
 const Banner = () => {
     return (
-        <div>
+        <div className="mb-4">
             <HeroSlider
                 height={"70vh"}
                 autoplay
@@ -38,16 +33,14 @@ const Banner = () => {
                 }}
             >
                 <Overlay>
-
                     <div className="Container">
-
-                        <Fade delay={1e3} cascade damping={1e-1} className='title'>Cascade</Fade>
-
+                        <Fade delay={1e3} cascade damping={1e-1} className='title'>
+                            Cascade
+                        </Fade>
                         <Fade delay={1e3} cascade damping={1e-1} className='subtitle'>
-                            School Of Music
+                            School of Music
                         </Fade>
                     </div>
-
                 </Overlay>
 
                 <Slide

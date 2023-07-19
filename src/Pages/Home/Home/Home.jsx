@@ -8,7 +8,6 @@ const Home = () => {
                 <title>Cascade School Of Music | Home</title>
             </Helmet>
             <Banner />
-            <p>Hi</p>
         </div>
     );
 };

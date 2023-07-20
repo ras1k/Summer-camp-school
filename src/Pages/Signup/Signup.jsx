@@ -6,6 +6,7 @@ import Swal from 'sweetalert2/dist/sweetalert2.all.js';
 import useAuth from '../../hooks/useAuth';
 import { Helmet } from 'react-helmet-async';
 import { useForm } from 'react-hook-form';
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 const SignUp = () => {
 
@@ -118,7 +119,7 @@ const SignUp = () => {
                                 </div>
                                 <div className="form-control mt-6">
                                     <input className="btn btn-primary" type="submit" value="Sign Up" /> <br />
-                                    {/* <SocialLogin></SocialLogin> */}
+                                    <SocialLogin/>
                                     <br />
                                     <p className='my-4 text-center'>Already have an account? <Link to='/login' className='no-underline text-orange-600 font-bold'>Login</Link></p>
                                 </div>

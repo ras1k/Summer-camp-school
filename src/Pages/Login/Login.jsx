@@ -4,6 +4,7 @@ import {  Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import Swal from 'sweetalert2/dist/sweetalert2.all.js';
 import { Helmet } from 'react-helmet-async';
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 const Login = () => {
 
@@ -72,7 +73,7 @@ const Login = () => {
                                 </div>
                                 <div className="form-control mt-6">
                                     <input className="btn btn-primary" type="submit" value="Login" /> <br />
-                                        
+                                        <SocialLogin/>
                                     <p className='my-4 text-center'>New Here? <Link to='/signup' className='no-underline text-orange-600 font-bold'>Signup</Link></p>
                                 </div>
                             </form>

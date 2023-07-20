@@ -1,22 +1,27 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from '../../../assets/CSM+LOGO.png';
+import useAuth from "../../../hooks/useAuth";
 
 const Header = () => {
-    const user = 1;
+    const {user, logOut} = useAuth();
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {})
+            .catch(error => console.log(error))
+    }
     const navItems = <>
         <li>
-            <Link to="/">Home</Link>
+            <NavLink to={"/"}>Home</NavLink>
         </li>
         <li>
-            <Link to='/'>Instructors</Link>
+            <NavLink to={'/instructors'}>Instructors</NavLink>
         </li>
         <li>
-            <Link to='/'>Classes</Link>
+            <NavLink to={'/classes'}>Classes</NavLink>
         </li>
         {user?.email ? <>
-            <li><Link to='/'>Dashboard</Link></li>
-        </> :
-            <li><Link to='/'></Link></li>}
+            <li><NavLink to={'/dashboard'}>Dashboard</NavLink></li>
+        </> : ""}
     </>
     return (
         <div className="">
@@ -30,10 +35,10 @@ const Header = () => {
                             {navItems}
                         </ul>
                     </div>
-                    <Link to="/" ><img src={logo} className='w-[100px]' alt="" /></Link>
+                    <NavLink to="/" ><img src={logo} className='w-[100px]' alt="" /></NavLink>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal hover:text-teal-400 px-1">
+                    <ul className="menu menu-horizontal text-slate-200 px-1">
                         {navItems}
                     </ul>
                 </div>
@@ -46,9 +51,9 @@ const Header = () => {
                         <img className="w-12 h-12 mx-3 rounded-full" src={user.photoURL} alt="user profile" />
                     )}
                     {user?.email ? <>
-                        <button className="btn btn-outline btn-neutral" /*onClick={handleLogOut}*/>Logout</button>
+                        <button className="btn btn-outline hover:text-teal-400 text-slate-200 btn-neutral" onClick={handleLogOut}>Logout</button>
                     </> :
-                        <Link to='/login'><button className="btn btn-sm md:btn-md btn-outline hover:text-teal-400 text-slate-200 btn-neutral">Login</button></Link>}
+                        <NavLink to='/login'><button className="btn btn-sm md:btn-md btn-outline hover:text-teal-400 text-slate-200 btn-neutral">Login</button></NavLink>}
                 </div>
             </div>
         </div>

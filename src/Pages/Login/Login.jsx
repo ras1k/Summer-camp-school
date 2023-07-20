@@ -3,6 +3,7 @@ import {  Link, useLocation, useNavigate } from 'react-router-dom';
 // import SocialLogin from '../SocialLogin/SocialLogin';
 import useAuth from '../../hooks/useAuth';
 import Swal from 'sweetalert2/dist/sweetalert2.all.js';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
 
@@ -42,8 +43,11 @@ const Login = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>Cascade School of Music | Login</title>
+            </Helmet>
             <div className="hero min-h-screen">
-                <div className="hero-content flex-col lg:flex-row">
+                <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="mr-12 text-center lg:w-2/5">
                         <img src={img} alt="" />
                     </div>

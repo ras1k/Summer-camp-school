@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 bg-black text-white rounded-s-lg rounded-e-lg rounded-b-none ">
+            <footer className="footer p-10 bg-black text-white">
                 <div>
                     <Link to={'/'}><img src="/public/CSM+LOGO.png" className="w-[100px]" alt="" /></Link>
                     <h3>Cascade School <br /> of Music</h3>

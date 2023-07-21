@@ -4,11 +4,11 @@ const SingleCourse = ({course}) => {
     const { title, image, students } = course;
     return (
         <div>
-            <div className="courses ">
-                <img src={image} className="rounded" alt="" />
-                <div className="p-5 ">
-                    <p className="text-black font-semibold">{title}</p>
-                    <p className="mt-3 text-black rounded-2xl text-[14px]">Number Of Students: {students}</p>
+            <div className="">
+                <img src={image} className="rounded-lg mb-4" alt="" />
+                <div className="mb-2">
+                    <h4 className="text-black text-xl font-semibold">{title}</h4>
+                    <p className="mt-3 text-black">Number Of Students: {students}</p>
                 </div>
             </div>
         </div>

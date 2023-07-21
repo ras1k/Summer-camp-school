@@ -1,12 +1,13 @@
 import { NavLink } from "react-router-dom";
 import logo from '../../../assets/CSM+LOGO.png';
 import useAuth from "../../../hooks/useAuth";
+import Tilt from 'react-parallax-tilt';
 
 const Header = () => {
-    const {user, logOut} = useAuth();
+    const { user, logOut } = useAuth();
     const handleLogOut = () => {
         logOut()
-            .then(() => {})
+            .then(() => { })
             .catch(error => console.log(error))
     }
     const navItems = <>
@@ -35,7 +36,9 @@ const Header = () => {
                             {navItems}
                         </ul>
                     </div>
-                    <NavLink to="/" ><img src={logo} className='w-[100px]' alt="" /></NavLink>
+                    <Tilt>
+                        <NavLink to="/" ><img src={logo} className='w-[100px]' alt="" /></NavLink>
+                    </Tilt>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal text-slate-200 px-1">

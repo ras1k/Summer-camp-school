@@ -5,12 +5,12 @@ const SingleInstructor = ({ instructor }) => {
     return (
         <div>
             <div className="h-1/2">
-                <div className="h-[300px]">
-                    <img src={image} className="rounded" alt="" />
+                <div className="mb-4">
+                    <img src={image} className="rounded-lg" alt="" />
                 </div>
-                <div className="p-5 ">
-                    <p className="text-black font-semibold">{name}</p>
-                    <p className="mt-3 text-black rounded-2xl text-[14px]">Number Of Students: {students}</p>
+                <div className="mb-2">
+                    <h4 className="text-black text-xl font-semibold">{name}</h4>
+                    <p className="text-black">Number Of Students: {students}</p>
                 </div>
             </div>
         </div>

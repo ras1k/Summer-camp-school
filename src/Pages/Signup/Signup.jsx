@@ -1,7 +1,6 @@
 // import { useState } from 'react';
 import img from '../../assets/CSM+LOGO.png'
 import { Link, useNavigate } from 'react-router-dom';
-// import SocialLogin from '../SocialLogin/SocialLogin';
 import Swal from 'sweetalert2/dist/sweetalert2.all.js';
 import useAuth from '../../hooks/useAuth';
 import { Helmet } from 'react-helmet-async';
@@ -119,7 +118,7 @@ const SignUp = () => {
                                 </div>
                                 <div className="form-control mt-6">
                                     <input className="btn btn-primary" type="submit" value="Sign Up" /> <br />
-                                    <SocialLogin/>
+                                    <SocialLogin />
                                     <br />
                                     <p className='my-4 text-center'>Already have an account? <Link to='/login' className='no-underline text-orange-600 font-bold'>Login</Link></p>
                                 </div>

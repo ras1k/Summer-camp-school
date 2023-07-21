@@ -1,4 +1,4 @@
-import img from '../../../assets/CSM+LOGO.png'
+import img from '/CSM+LOGO.png'
 import Tilt from 'react-parallax-tilt';
 const NewsLetter = () => {
     return (

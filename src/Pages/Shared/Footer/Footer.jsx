@@ -1,12 +1,13 @@
 import moment from "moment/moment";
 import { Link } from "react-router-dom";
+import img from '/CSM+LOGO.png';
 
 const Footer = () => {
     return (
         <div>
             <footer className="footer p-10 bg-black text-white">
                 <div>
-                    <Link to={'/'}><img src="/public/CSM+LOGO.png" className="w-[100px]" alt="" /></Link>
+                    <Link to={'/'}><img src={img} className="w-[100px]" alt="" /></Link>
                     <h3>Cascade School <br /> of Music</h3>
                 </div>
                 <div>

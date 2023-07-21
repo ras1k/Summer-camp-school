@@ -5,10 +5,10 @@ const SingleCourse = ({course}) => {
     return (
         <div>
             <div className="courses ">
-                <img src={image} alt="" />
-                <div className="course-info p-5 ">
-                    <p className="text-[#000] text-[14px] font-[400]">{title}</p>
-                    <button className="bg-[#000] mt-3 text-white rounded-2xl px-2 text-[14px] py-1">Number Of Students: {students}</button>
+                <img src={image} className="rounded" alt="" />
+                <div className="p-5 ">
+                    <p className="text-black font-semibold">{title}</p>
+                    <p className="mt-3 text-black rounded-2xl text-[14px]">Number Of Students: {students}</p>
                 </div>
             </div>
         </div>

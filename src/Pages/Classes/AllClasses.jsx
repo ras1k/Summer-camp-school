@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import Class from "./Class";
-import { FaMusic } from "react-icons/fa";
+import { GiMusicSpell } from "react-icons/gi";
 
 const AllClasses = () => {
     const [classes, setClasses] = useState([]);
@@ -18,7 +18,7 @@ const AllClasses = () => {
     return (
         <div>
             {isLoading ? (
-                <div className="lg:text-[80px] text-black md:text-[70px] text-[30px] m-24 flex items-center justify-center">L<span><FaMusic /></span>ADING...</div>
+                <div className="lg:text-[80px] text-black md:text-[70px] text-[30px] m-24 flex items-center justify-center">L<span><GiMusicSpell /></span>ADING...</div>
 
             ) : (
                 <div className="courses lg:mx-12 lg:gap-6 mb-10 grid md:grid-cols-2 lg:grid-cols-3">

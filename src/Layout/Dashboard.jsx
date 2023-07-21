@@ -8,11 +8,11 @@ import {
     FaUsers,
     FaChalkboardTeacher,
     FaClipboard,
-    FaMusic
 } from "react-icons/fa";
+import { GiMusicSpell } from "react-icons/gi";
 import { FaAlignJustify } from "react-icons/fa";
-import useAdmin from "../../hooks/useAdmin";
-import useInstructor from "../../hooks/useInstructor";
+import useAdmin from "../hooks/useAdmin";
+import useInstructor from "../hooks/useInstructor";
 import { Fade } from "react-awesome-reveal";
 
 const Dashboard = () => {
@@ -30,7 +30,7 @@ const Dashboard = () => {
         <div>
             {isLoading ? (
                 <Fade delay={1e1} damping={1e-1} >
-                    <div className="lg:text-[80px] text-black md:text-[70px] text-[30px] m-24 flex items-center justify-center">L<span><FaMusic /></span>ADING...</div>
+                    <div className="lg:text-[80px] text-black md:text-[70px] text-[30px] m-24 flex items-center justify-center">L<span><GiMusicSpell /></span>ADING...</div>
                 </Fade>
             ) : (
                 <div className="drawer lg:drawer-open">

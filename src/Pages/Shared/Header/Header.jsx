@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from '../../../assets/CSM+LOGO.png';
 import useAuth from "../../../hooks/useAuth";
 import Tilt from 'react-parallax-tilt';
@@ -37,7 +37,7 @@ const Header = () => {
                         </ul>
                     </div>
                     <Tilt>
-                        <NavLink to="/" ><img src={logo} className='w-[100px]' alt="" /></NavLink>
+                        <Link to="/" ><img src={logo} className='w-[100px]' alt="" /></Link>
                     </Tilt>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -54,9 +54,9 @@ const Header = () => {
                         <img className="w-12 h-12 mx-3 rounded-full" src={user.photoURL} alt="user profile" />
                     )}
                     {user?.email ? <>
-                        <button className="btn btn-outline hover:text-teal-400 text-slate-200 btn-neutral" onClick={handleLogOut}>Logout</button>
+                        <button className="btn btn-outline hover:bg-white hover:text-black text-slate-200 btn-neutral" onClick={handleLogOut}>Logout</button>
                     </> :
-                        <NavLink to='/login'><button className="btn btn-sm md:btn-md btn-outline hover:text-teal-400 text-slate-200 btn-neutral">Login</button></NavLink>}
+                        <Link to='/login'><button className="btn btn-sm md:btn-md btn-outline hover:bg-white hover:text-black text-slate-200 btn-neutral">Login</button></Link>}
                 </div>
             </div>
         </div>

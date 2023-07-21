@@ -14,6 +14,7 @@ const SignUp = () => {
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm();
 
@@ -24,39 +25,34 @@ const SignUp = () => {
                 console.log(loggedUser)
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        // const saveUser = { name: data.name, email: data.email }
-                        // console.log(saveUser)
-                        Swal.fire({
-                            title: 'User Signup successful',
-                            showClass: {
-                                popup: 'animate__animated animate__fadeInDown'
+                        const saveUser = { name: data.name, email: data.email }
+                        fetch('http://localhost:5000/users', {
+                            method: "POST",
+                            headers: {
+                                'content-type': 'application/json'
                             },
-                            hideClass: {
-                                popup: 'animate__animated animate__fadeOutUp'
-                            }
-                        });
-                        navigate('/')
+                            body: JSON.stringify(saveUser)
 
-                        // .then(res => res.json())
-                        // .then(data => {
-                        //     if (data.insertedId) {
-                        //         reset();
-                        //         Swal.fire({
-                        //             title: 'User Signup successful',
-                        //             showClass: {
-                        //                 popup: 'animate__animated animate__fadeInDown'
-                        //             },
-                        //             hideClass: {
-                        //                 popup: 'animate__animated animate__fadeOutUp'
-                        //             }
-                        //         });
-                        //         navigate('/')
-                        //     }
-                        // })
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    reset()
+                                    Swal.fire({
+                                        title: 'User created Successfully.',
+                                        showClass: {
+                                            popup: 'animate__animated animate__fadeInDown'
+                                        },
+                                        hideClass: {
+                                            popup: 'animate__animated animate__fadeOutUp'
+                                        }
+                                    })
+                                    navigate('/');
+                                }
+                            })
+
                     })
-                    .catch(error => {
-                        console.log(error)
-                    })
+                    .catch(error => console.log(error))
             })
             .catch(error => {
                 console.log(error)

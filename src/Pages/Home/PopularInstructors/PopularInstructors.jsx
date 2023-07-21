@@ -16,7 +16,7 @@ const PopularInstructors = () => {
             <h1 className="text-center text-4xl font-semibold mb-4">Popular Instructors</h1>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                 {
-                    instructors.map(instructor =><SingleInstructor key={instructor._id} instructor={instructor}></SingleInstructor>)
+                    instructors.map(instructor =><SingleInstructor key={instructor.id} instructor={instructor}></SingleInstructor>)
                 }
             </div>
         </div>

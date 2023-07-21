@@ -13,7 +13,7 @@ const Class = ({ course }) => {
         console.log(cart);
         if (user && user.email) {
             const cartItem = { courseItemId: id, title, price, image, email: user.email }
-            fetch('https://localhost:5000/carts', {
+            fetch('http://localhost:5000/carts', {
                 method: "POST",
                 headers: {
                     'content-type': 'application/json'

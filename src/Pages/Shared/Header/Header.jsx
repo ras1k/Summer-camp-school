@@ -17,7 +17,7 @@ const Header = () => {
             <NavLink to={'/allInstructors'}>Instructors</NavLink>
         </li>
         <li>
-            <NavLink to={'/classes'}>Classes</NavLink>
+            <NavLink to={'/allclasses'}>Classes</NavLink>
         </li>
         {user?.email ? <>
             <li><NavLink to={'/dashboard'}>Dashboard</NavLink></li>

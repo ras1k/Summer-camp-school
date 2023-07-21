@@ -4,12 +4,11 @@ const Instructor = ({instructor}) => {
 
     return (
         <div>
-            
-             <div className="courses ">
-                <img src={image} alt="" />
-                <div className="course-info p-5 ">
-                    <p className="text-[#000] text-[14px] font-[400]">Name: {instructorName}</p>
-                    <p className="text-[#000] text-[14px] font-[400]">Email: {email}</p>
+             <div className="">
+                <img src={image} className="rounded-lg" alt="" />
+                <div className="mt-4">
+                    <p className="text-black text-xl">Name: {instructorName}</p>
+                    <p className="text-black text-xl">Email: {email}</p>
                   
                 </div>
             </div>

@@ -18,11 +18,11 @@ const AllInstructor = () => {
     return (
         <div>
             {isLoading ? (
-                <div className="lg:text-[150px] md:text-[140px] text-[30px] mt-48  flex items-center justify-center">L<span><FaMusic/></span>ading...</div>
+                <div className="lg:text-[80px] text-black md:text-[70px] text-[30px] m-24 flex items-center justify-center">L<span><FaMusic /></span>ADING...</div>
             ) : (
-                <div className="courses p-10 lg:p-20 md:p-20 lg:mx-12 lg:gap-6  grid md:grid-cols-2 lg:grid-cols-3">
+                <div className="lg:mx-12 lg:gap-6 mb-10 grid md:grid-cols-2 lg:grid-cols-3">
                     {
-                        allInstructors.map(instructor => <Instructor key={instructor._id} instructor={instructor}></Instructor>)
+                        allInstructors.map(instructor => <Instructor key={instructor.id} instructor={instructor}></Instructor>)
                     }
                 </div>
             )}

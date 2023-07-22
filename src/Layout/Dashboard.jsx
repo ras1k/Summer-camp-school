@@ -50,19 +50,19 @@ const Dashboard = () => {
                         <ul className="menu p-4 w-80 h-full bg-base-content text-white">
                             <li className="hover:bg-teal-400 hover:rounded-lg">
                                 <NavLink to={"/"}>
-                                    <FaHome></FaHome> Home
+                                    <FaHome /> Home
                                 </NavLink>
                             </li>
                             {isAdmin && (
                                 <>
                                     <li className="hover:bg-teal-400 hover:rounded-lg">
                                         <NavLink to={"/dashboard/manageUsers"}>
-                                            <FaUsers></FaUsers> Manage Users
+                                            <FaUsers /> Manage Users
                                         </NavLink>
                                     </li>
                                     <li className="hover:bg-teal-400 hover:rounded-lg">
                                         <NavLink to={"/dashboard/manageClasses"}>
-                                            <FaUsers></FaUsers> Manage Classes
+                                            <FaUsers /> Manage Classes
                                         </NavLink>
                                     </li>
                                 </>
@@ -71,17 +71,17 @@ const Dashboard = () => {
                                 <>
                                     <li className="hover:bg-teal-400 hover:rounded-lg">
                                         <NavLink to={"/dashboard/myClasses"}>
-                                            <FaPersonBooth></FaPersonBooth> My Selected Classes
+                                            <FaPersonBooth /> My Selected Classes
                                         </NavLink>
                                     </li>
                                     <li className="hover:bg-teal-400 hover:rounded-lg">
                                         <NavLink to={"/dashboard/myEnrolledClasses"}>
-                                            <FaPencilRuler></FaPencilRuler> My Enrolled Classes
+                                            <FaPencilRuler /> My Enrolled Classes
                                         </NavLink>
                                     </li>
                                     <li className="hover:bg-teal-400 hover:rounded-lg">
                                         <NavLink to={"/dashboard/payment"}>
-                                            <FaWallet></FaWallet> PAYMENT
+                                            <FaWallet /> PAYMENT
                                         </NavLink>
                                     </li>
                                 </>
@@ -90,21 +90,20 @@ const Dashboard = () => {
                                 <>
                                     <li className="hover:bg-teal-400 hover:rounded-lg">
                                         <NavLink to={"/dashboard/instructor"}>
-                                            <FaChalkboardTeacher></FaChalkboardTeacher> Instructor
+                                            <FaChalkboardTeacher /> Instructor
                                         </NavLink>
                                     </li>
                                     <li className="hover:bg-teal-400 hover:rounded-lg">
                                         <NavLink to={"/dashboard/addClass"}>
-                                            <FaClipboard></FaClipboard> Add A Class
+                                            <FaClipboard /> Add A Class
                                         </NavLink>
                                     </li>
                                     <li className="hover:bg-teal-400 hover:rounded-lg">
                                         <NavLink to={"/dashboard/myClass"}>
-                                            <FaUsers></FaUsers> My Class
+                                            <FaUsers />My Class
                                         </NavLink>
                                     </li>
                                 </>
-
                             )}
                         </ul>
                     </div>

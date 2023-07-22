@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import {  FaTrashAlt } from "react-icons/fa";
+import { FaTrashAlt } from "react-icons/fa";
 import { GiCheckMark } from "react-icons/gi";
 import { BiCommentAdd } from "react-icons/bi";
+import { Helmet } from "react-helmet-async";
 
 const MyClass = () => {
     const [courses, setCourses] = useState([]);
@@ -17,6 +18,9 @@ const MyClass = () => {
 
     return (
         <div className="w-full h-full ms-10 mt-4">
+            <Helmet>
+                <title>Cascade School of Music | Dashboard | My Class</title>
+            </Helmet>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     <thead>
@@ -30,7 +34,6 @@ const MyClass = () => {
                             <th>Approve</th>
                             <th>Deny</th>
                             <th>Send Feedback</th>
-
                         </tr>
                     </thead>
                     <tbody>
@@ -54,9 +57,9 @@ const MyClass = () => {
                                 <td className="">{course.email}</td>
                                 <td className="">{course.availableSeats}</td>
                                 <td className="">${course.price}</td>
-                                <td> <button className="btn btn-ghost bg-green-700  text-white"><GiCheckMark></GiCheckMark></button></td>
-                                <td> <button className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button></td>
-                                <td> <button className="btn btn-ghost bg-blue-400  text-white"><BiCommentAdd></BiCommentAdd></button></td>
+                                <td> <button className="btn btn-ghost bg-green-700  text-white"><GiCheckMark /></button></td>
+                                <td> <button className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt /></button></td>
+                                <td> <button className="btn btn-ghost bg-blue-400  text-white"><BiCommentAdd /></button></td>
                             </tr>)
                         }
                     </tbody>

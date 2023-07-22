@@ -11,9 +11,9 @@ const Home = () => {
                 <title>Cascade School Of Music | Home</title>
             </Helmet>
             <Banner />
-            <PopularClasses/>
-            <PopularInstructors/>
-            <NewsLetter/>
+            <PopularClasses />
+            <PopularInstructors />
+            <NewsLetter />
         </div>
     );
 };

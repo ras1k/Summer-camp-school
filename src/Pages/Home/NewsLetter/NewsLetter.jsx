@@ -2,9 +2,7 @@ import img from '/CSM+LOGO.png'
 import Tilt from 'react-parallax-tilt';
 const NewsLetter = () => {
     return (
-
         <div>
-
             <Tilt>
                 <div className="hero mb-20 mt-10 rounded-lg">
                     <div className="hero-content flex-col gap-10 lg:flex-row-reverse">
@@ -29,15 +27,12 @@ const NewsLetter = () => {
                                 </div>
                             </div>
                         </div>
-
                         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                             <img src={img} alt="" className='w-4/5 lg:w-full' />
                         </div>
-
                     </div>
                 </div>
             </Tilt>
-
         </div>
     );
 };

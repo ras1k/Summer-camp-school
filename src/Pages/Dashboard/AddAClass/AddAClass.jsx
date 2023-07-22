@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import useAuth from '../../../hooks/useAuth';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { useForm } from 'react-hook-form';
@@ -46,6 +47,9 @@ const AddAClass = () => {
     };
     return (
         <div className='w-full h-full ms-10 mt-4'>
+            <Helmet>
+                <title>Cascade School of Music | Dashboard | Add A Class</title>
+            </Helmet>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-control w-full max-w-xs">
                     <label className="label">

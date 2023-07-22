@@ -1,6 +1,7 @@
 import { FaTrashAlt, FaMoneyBill } from "react-icons/fa";
 import Swal from 'sweetalert2/dist/sweetalert2.all.js';
 import useCart from "../../../hooks/useCart";
+import { Helmet } from "react-helmet-async";
 
 const MySelectedClasses = () => {
     const [cart, refetch] = useCart();
@@ -18,8 +19,8 @@ const MySelectedClasses = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/carts/${item._id}`,{
-                    method:"DELETE"
+                fetch(`http://localhost:5000/carts/${item._id}`, {
+                    method: "DELETE"
                 })
                     .then(res => res.json())
                     .then(data => {
@@ -38,7 +39,10 @@ const MySelectedClasses = () => {
     }
     return (
         <div className="w-full h-full ms-10 mt-4">
-             <div className="overflow-x-auto w-full">
+            <Helmet>
+                <title>Cascade School of Music | Dashboard | My Selected Class</title>
+            </Helmet>
+            <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     <thead>
                         <tr>
@@ -72,9 +76,9 @@ const MySelectedClasses = () => {
                                 <td>
                                     <button className="btn btn-ghost btn-xs">details</button>
                                 </td>
-                                
-                               <td> <button onClick={() => handleDelete(course)} className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button></td>
-                               <td> <button className="btn btn-ghost bg-green-700  text-white"><FaMoneyBill></FaMoneyBill></button></td>
+
+                                <td> <button onClick={() => handleDelete(course)} className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt /></button></td>
+                                <td> <button className="btn btn-ghost bg-green-700  text-white"><FaMoneyBill /></button></td>
                             </tr>)
                         }
 

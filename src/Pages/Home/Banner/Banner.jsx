@@ -1,5 +1,4 @@
 import HeroSlider, { MenuNav, Overlay, Slide } from "hero-slider";
-// import HeroSlider from "hero-slider/dist/HeroSlider";
 import { Fade } from "react-awesome-reveal";
 import './Banner.css'
 

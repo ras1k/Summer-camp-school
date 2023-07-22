@@ -32,7 +32,6 @@ const MySelectedClasses = () => {
                                 'success'
                             )
                         }
-                        
                     })
             }
         })

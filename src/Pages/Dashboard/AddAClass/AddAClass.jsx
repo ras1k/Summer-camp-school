@@ -45,7 +45,7 @@ const AddAClass = () => {
 
     };
     return (
-        <div>
+        <div className='w-full h-full ms-10 mt-4'>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
@@ -97,11 +97,9 @@ const AddAClass = () => {
                         <span className="label-text">Class Image*</span>
                     </label>
                     <input type="file" {...register("image", { required: true })} className="file-input file-input-bordered w-full max-w-xs" />
-
                 </div>
                 <div className="py-5 flex items-center">
-                    <input className="bg-[#000] text-white  text-[17px] py-2 px-3 cursor-pointer font-semibold" type="submit" value="Add Course" />
-
+                    <input className="btn btn-outline w-2/6 text-black mt-2" type="submit" value="Add Course" />
                 </div>
             </form>
         </div>

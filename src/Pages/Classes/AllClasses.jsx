@@ -13,7 +13,6 @@ const AllClasses = () => {
             .then(data => {
                 setClasses(data[0].classes);
                 setIsLoading(false);
-                console.log(data[1]);
             })
     }, [])
     return (

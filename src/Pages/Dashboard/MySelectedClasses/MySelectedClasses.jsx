@@ -41,7 +41,6 @@ const MySelectedClasses = () => {
         <div className="w-full h-full ms-10 mt-4">
              <div className="overflow-x-auto w-full">
                 <table className="table w-full">
-                    {/* head */}
                     <thead>
                         <tr>
                             <th>#</th>
@@ -50,7 +49,6 @@ const MySelectedClasses = () => {
                             <th>Update</th>
                             <th>Delete</th>
                             <th>Pay</th>
-
                         </tr>
                     </thead>
                     <tbody>
@@ -78,7 +76,6 @@ const MySelectedClasses = () => {
                                 
                                <td> <button onClick={() => handleDelete(course)} className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button></td>
                                <td> <button className="btn btn-ghost bg-green-700  text-white"><FaMoneyBill></FaMoneyBill></button></td>
-                           
                             </tr>)
                         }
 

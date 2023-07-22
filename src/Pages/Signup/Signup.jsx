@@ -6,6 +6,7 @@ import useAuth from '../../hooks/useAuth';
 import { Helmet } from 'react-helmet-async';
 import { useForm } from 'react-hook-form';
 import SocialLogin from '../Shared/SocialLogin/SocialLogin';
+import Tilt from 'react-parallax-tilt';
 
 const SignUp = () => {
 
@@ -67,36 +68,38 @@ const SignUp = () => {
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="mr-12 lg:w-2/5">
-                        <img src={img} alt="" />
+                        <Tilt>
+                            <img src={img} alt="" />
+                        </Tilt>
                     </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-black text-white">
                         <div className="card-body">
                             <h1 className="text-5xl font-bold text-center">Signup</h1>
                             <form onSubmit={handleSubmit(onSubmit)}>
-                                <div className="form-control">
+                                <div className="form-control ">
                                     <label className="label">
-                                        <span className="label-text">Name</span>
+                                        <span className="label-text text-white">Name</span>
                                     </label>
                                     <input type="text" name='name' {...register("name", { required: true })} placeholder="name" className="input input-bordered" />
                                     {errors.name && <span className='text-red-600'>This field is required</span>}
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Email</span>
+                                        <span className="label-text text-white">Email</span>
                                     </label>
                                     <input type="text" name='email' {...register("email", { required: true })} placeholder="email" className="input input-bordered" />
                                     {errors.email && <span className='text-red-600'>This field is required</span>}
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Photo URl</span>
+                                        <span className="label-text text-white">Photo URl</span>
                                     </label>
                                     <input type="text" name='photoURL' {...register("photoURL", { required: true })} placeholder="photo URL" className="input input-bordered" />
                                     {errors.photoURL && <span className='text-red-600'>This field is required</span>}
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className='label-text'>Password</span>
+                                        <span className='label-text text-white'>Password</span>
                                     </label>
                                     <input type="password" name='password' {...register("password", {
                                         required: true,
@@ -109,11 +112,11 @@ const SignUp = () => {
                                     {/* {errors.password?.type === 'pattern' && <span className='text-red-600'>Password Must Be 1 upper case, 1 lower case, 1 special character</span>} */}
 
                                     <label className="label">
-                                        <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                        <a href="#" className="label-text-alt link link-hover text-white mt-2">Forgot password?</a>
                                     </label>
                                 </div>
                                 <div className="form-control mt-6">
-                                    <input className="btn btn-primary" type="submit" value="Sign Up" /> <br />
+                                    <input className="btn btn-sm md:btn-md btn-outline hover:bg-white hover:text-black text-slate-200 btn-neutral" type="submit" value="Sign Up" /> <br />
                                     <SocialLogin />
                                     <br />
                                     <p className='my-4 text-center'>Already have an account? <Link to='/login' className='no-underline text-orange-600 font-bold'>Login</Link></p>

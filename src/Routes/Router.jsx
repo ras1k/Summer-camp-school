@@ -8,6 +8,8 @@ import AllInstructor from "../Pages/Instructor/AllInstructor";
 import AllClasses from "../Pages/Classes/AllClasses";
 import Dashboard from "../Layout/Dashboard";
 import MySelectedClasses from "../Pages/Dashboard/MySelectedClasses/MySelectedClasses";
+import MyEnrolledClasses from "../Pages/Dashboard/MyEnrolledClasses/MyEnrolledClasses";
+import Payment from "../Pages/Dashboard/Payment/Payment";
 // import PrivateRoute from "./PrivateRoute";
 
 
@@ -47,7 +49,15 @@ const router = createBrowserRouter([
       {
         path: 'myClasses',
         element: <MySelectedClasses />
-      }
+      },
+      {
+        path: 'myEnrolledClasses',
+        element: <MyEnrolledClasses />
+      },
+      {
+        path: 'payment',
+        element: <Payment />
+      },
     ]
   }
 ]);

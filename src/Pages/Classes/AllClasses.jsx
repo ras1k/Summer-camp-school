@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Class from "./Class";
 import { GiMusicSpell } from "react-icons/gi";
+import { Helmet } from "react-helmet-async";
 
 const AllClasses = () => {
     const [classes, setClasses] = useState([]);
@@ -17,6 +18,9 @@ const AllClasses = () => {
     }, [])
     return (
         <div>
+            <Helmet>
+                <title>Cascade School of Music | Classes</title>
+            </Helmet>
             {isLoading ? (
                 <div className="lg:text-[80px] text-black md:text-[70px] text-[30px] m-24 flex items-center justify-center">L<span><GiMusicSpell /></span>ADING...</div>
 

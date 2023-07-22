@@ -14,6 +14,7 @@ import { FaAlignJustify } from "react-icons/fa";
 import useAdmin from "../hooks/useAdmin";
 import useInstructor from "../hooks/useInstructor";
 import { Fade } from "react-awesome-reveal";
+import { Helmet } from "react-helmet-async";
 
 const Dashboard = () => {
     const [isAdmin] = useAdmin();
@@ -28,6 +29,9 @@ const Dashboard = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Cascade School of Music | Dashboard</title>
+            </Helmet>
             {isLoading ? (
                 <Fade delay={1e1} damping={1e-1} >
                     <div className="lg:text-[80px] text-black md:text-[70px] text-[30px] m-24 flex items-center justify-center">L<span><GiMusicSpell /></span>ADING...</div>

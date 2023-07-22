@@ -4,7 +4,7 @@ const Instructor = ({instructor}) => {
 
     return (
         <div>
-             <div className="">
+             <div className="mt-2">
                 <img src={image} className="rounded-lg" alt="" />
                 <div className="mt-4">
                     <p className="text-black text-xl">Name: {instructorName}</p>

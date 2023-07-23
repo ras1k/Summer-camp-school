@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { FaBackspace, FaTrashAlt, FaHandHolding } from "react-icons/fa";
-import FeedbackModal from "./FeedbackModal";
+import FeedbackModal from "../../FeedBackModal/FeedbackModal";
 
 const ManageClasses = () => {
     const [courses, setCourses] = useState([]);
@@ -33,7 +33,6 @@ const ManageClasses = () => {
     };
 
     const handleSubmitFeedback = (feedback) => {
-        // Handle sending feedback here (e.g., submit feedback to the Instructor)
         console.log(`Feedback: ${feedback}`);
     };
 

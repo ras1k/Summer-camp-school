@@ -4,9 +4,14 @@ import { FaTrashAlt } from "react-icons/fa";
 import { GiCheckMark } from "react-icons/gi";
 import { BiCommentAdd } from "react-icons/bi";
 import { Helmet } from "react-helmet-async";
+import FeedbackModal from "../FeedBackModal/FeedbackModal";
 
 const MyClass = () => {
     const [courses, setCourses] = useState([]);
+    const [status, setStatus] = useState('pending');
+    const [isDisabled, setIsDisabled] = useState(false);
+    const [showFeedbackModal, setShowFeedbackModal] = useState(false);
+
     useEffect(() => {
         fetch('http://localhost:5000/classes')
             .then(res => res.json())
@@ -15,6 +20,24 @@ const MyClass = () => {
                 console.log(data);
             })
     }, []);
+
+    const handleApprove = () => {
+        setStatus('approved');
+        setIsDisabled(true);
+    };
+
+    const handleDeny = () => {
+        setStatus('denied');
+        setIsDisabled(true);
+    };
+
+    const handleSendFeedback = () => {
+        setShowFeedbackModal(true);
+    };
+
+    const handleSubmitFeedback = (feedback) => {
+        console.log(`Feedback: ${feedback}`);
+    };
 
     return (
         <div className="w-full h-full ms-10 mt-4">
@@ -28,9 +51,10 @@ const MyClass = () => {
                             <th>#</th>
                             <th>Name</th>
                             <th>Instructor</th>
-                            <th className="text-center">Email</th>
+                            <th>Email</th>
                             <th>Available Seats</th>
                             <th>Price</th>
+                            <th>Status</th>
                             <th>Approve</th>
                             <th>Deny</th>
                             <th>Send Feedback</th>
@@ -57,9 +81,15 @@ const MyClass = () => {
                                 <td className="">{course.email}</td>
                                 <td className="">{course.availableSeats}</td>
                                 <td className="">${course.price}</td>
-                                <td> <button className="btn btn-ghost bg-green-700  text-white"><GiCheckMark /></button></td>
-                                <td> <button className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt /></button></td>
-                                <td> <button className="btn btn-ghost bg-blue-400  text-white"><BiCommentAdd /></button></td>
+                                <td className="text-right">{status}</td>
+                                <td> <button className="btn btn-ghost bg-green-700  text-white" onClick={handleApprove} disabled={isDisabled || status !== 'pending'}><GiCheckMark /></button></td>
+                                <td> <button className="btn btn-ghost bg-red-600  text-white" onClick={handleDeny} disabled={isDisabled || status !== 'pending'}><FaTrashAlt /></button></td>
+                                <td> <button className="btn btn-ghost bg-blue-400  text-white" onClick={handleSendFeedback} disabled={isDisabled}><BiCommentAdd /></button></td>
+                                <FeedbackModal
+                                    isOpen={showFeedbackModal}
+                                    onClose={() => setShowFeedbackModal(false)}
+                                    onSubmit={handleSubmitFeedback}
+                                />
                             </tr>)
                         }
                     </tbody>

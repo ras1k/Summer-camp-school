@@ -1,4 +1,4 @@
-
+import Tilt from 'react-parallax-tilt';
 
 const SingleInstructor = ({ instructor }) => {
     const { name, image, students } = instructor;
@@ -6,7 +6,9 @@ const SingleInstructor = ({ instructor }) => {
         <div>
             <div className="h-1/2">
                 <div className="mb-4">
-                    <img src={image} className="rounded-lg" alt="" />
+                    <Tilt>
+                        <img src={image} className="rounded-lg" alt="" />
+                    </Tilt>
                 </div>
                 <div className="mb-2">
                     <h4 className="text-black text-xl font-semibold">{name}</h4>

@@ -13,6 +13,8 @@ import Payment from "../Pages/Dashboard/Payment/Payment";
 import AddAClass from "../Pages/Dashboard/AddAClass/AddAClass";
 import MyClass from "../Pages/Dashboard/MyClass/MyClass";
 import ManageUsers from "../Pages/Dashboard/Admin/ManageUsers/ManageUsers";
+import ManageClasses from "../Pages/Dashboard/Admin/ManageClasses/ManageClasses";
+// import AdminRoute from "./AdminRoute";
 // import PrivateRoute from "./PrivateRoute";
 
 
@@ -76,6 +78,10 @@ const router = createBrowserRouter([
       {
         path: 'manageUsers',
         element: <ManageUsers />
+      },
+      {
+        path: 'manageClasses',
+        element: <ManageClasses />
       },
     ]
   }

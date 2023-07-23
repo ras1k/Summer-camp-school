@@ -1,9 +1,14 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { FaBackspace, FaTrashAlt, FaHandHolding } from "react-icons/fa";
+import FeedbackModal from "./FeedbackModal";
 
 const ManageClasses = () => {
     const [courses, setCourses] = useState([]);
+    const [status, setStatus] = useState('pending');
+    const [isDisabled, setIsDisabled] = useState(false);
+    const [showFeedbackModal, setShowFeedbackModal] = useState(false);
+
     useEffect(() => {
         fetch('http://localhost:5000/classes')
             .then(res => res.json())
@@ -11,7 +16,27 @@ const ManageClasses = () => {
                 setCourses(data);
                 console.log(data);
             })
-    }, [])
+    }, []);
+
+    const handleApprove = () => {
+        setStatus('approved');
+        setIsDisabled(true);
+    };
+
+    const handleDeny = () => {
+        setStatus('denied');
+        setIsDisabled(true);
+    };
+
+    const handleSendFeedback = () => {
+        setShowFeedbackModal(true);
+    };
+
+    const handleSubmitFeedback = (feedback) => {
+        // Handle sending feedback here (e.g., submit feedback to the Instructor)
+        console.log(`Feedback: ${feedback}`);
+    };
+
     return (
         <div className="w-full h-full ms-10 mt-4">
             <div className="overflow-x-auto w-full">
@@ -25,6 +50,7 @@ const ManageClasses = () => {
                             <th>Email</th>
                             <th>Available Seats</th>
                             <th>Price</th>
+                            <th>Status</th>
                             <th>Approve</th>
                             <th>Deny</th>
                             <th>Send Feedback</th>
@@ -52,10 +78,15 @@ const ManageClasses = () => {
                                 <td className="text-right">{course.email}</td>
                                 <td className="text-right">{course.availableSeats}</td>
                                 <td className="text-right">${course.price}</td>
-                                <td> <button className="btn btn-ghost bg-green-700  text-white"><FaHandHolding></FaHandHolding></button></td>
-                                <td> <button className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button></td>
-                                <td> <button className="btn btn-ghost bg-blue-400  text-white"><FaBackspace></FaBackspace></button></td>
-
+                                <td className="text-right">{status}</td>
+                                <td> <button className="btn btn-ghost bg-green-700  text-white" onClick={handleApprove} disabled={isDisabled || status !== 'pending'}><FaHandHolding></FaHandHolding></button></td>
+                                <td> <button className="btn btn-ghost bg-red-600  text-white" onClick={handleDeny} disabled={isDisabled || status !== 'pending'}><FaTrashAlt></FaTrashAlt></button></td>
+                                <td> <button className="btn btn-ghost bg-blue-400  text-white" onClick={handleSendFeedback} disabled={isDisabled}><FaBackspace></FaBackspace></button></td>
+                                <FeedbackModal
+                                    isOpen={showFeedbackModal}
+                                    onClose={() => setShowFeedbackModal(false)}
+                                    onSubmit={handleSubmitFeedback}
+                                />
                             </tr>)
                         }
                     </tbody>

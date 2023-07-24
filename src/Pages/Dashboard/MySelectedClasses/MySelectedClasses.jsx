@@ -2,6 +2,7 @@ import { FaTrashAlt, FaMoneyBill } from "react-icons/fa";
 import Swal from 'sweetalert2/dist/sweetalert2.all.js';
 import useCart from "../../../hooks/useCart";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
 const MySelectedClasses = () => {
     const [cart, refetch] = useCart();
@@ -78,7 +79,7 @@ const MySelectedClasses = () => {
                                 </td>
 
                                 <td> <button onClick={() => handleDelete(course)} className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt /></button></td>
-                                <td> <button className="btn btn-ghost bg-green-700  text-white"><FaMoneyBill /></button></td>
+                                <Link to={'/dashboard/payment'}><td> <button className="btn btn-ghost bg-green-700  text-white"><FaMoneyBill /></button></td></Link>
                             </tr>)
                         }
 

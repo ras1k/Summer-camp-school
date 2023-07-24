@@ -51,6 +51,7 @@ const router = createBrowserRouter([
     element: <PrivateRoute><Dashboard /></PrivateRoute>,
     errorElement: <ErrorPage />,
     children: [
+      //user routes
       {
         path: 'myClasses',
         element: <MySelectedClasses />
@@ -63,6 +64,7 @@ const router = createBrowserRouter([
         path: 'payment',
         element: <Payment />
       },
+      //instructor routes
       {
         path: 'instructor',
         element: <AllInstructor />
@@ -75,6 +77,7 @@ const router = createBrowserRouter([
         path: 'myClass',
         element: <MyClass />
       },
+      //admin routes
       {
         path: 'manageUsers',
         element: <AdminRoute><ManageUsers /></AdminRoute>

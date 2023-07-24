@@ -29,7 +29,7 @@ const FeedbackModal = ({ isOpen, onClose, onSubmit }) => {
     };
 
     return (
-        <Modal isOpen={isOpen} style={customStyles} onRequestClose={onClose}>
+        <Modal isOpen={isOpen} style={customStyles} onRequestClose={onClose} ariaHideApp={false}>
             <div className='p-4'>
                 <h2 className='text-xl font-semibold mb-2'>Provide Feedback</h2>
                 <textarea

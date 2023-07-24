@@ -8,8 +8,10 @@ const ManageClasses = () => {
     const [status, setStatus] = useState('pending');
     const [isDisabled, setIsDisabled] = useState(false);
     const [showFeedbackModal, setShowFeedbackModal] = useState(false);
+    // const [checkIndex, setCheckIndex] = useState(null);
 
     useEffect(() => {
+        console.log('hello')
         fetch('http://localhost:5000/classes')
             .then(res => res.json())
             .then(data => {
@@ -18,9 +20,11 @@ const ManageClasses = () => {
             })
     }, []);
 
-    const handleApprove = () => {
+    const handleApprove = (id) => {
+        // setCheckIndex(id);
         setStatus('approved');
         setIsDisabled(true);
+        console.log(id);
     };
 
     const handleDeny = () => {
@@ -78,7 +82,7 @@ const ManageClasses = () => {
                                 <td className="text-right">{course.availableSeats}</td>
                                 <td className="text-right">${course.price}</td>
                                 <td className="text-right">{status}</td>
-                                <td> <button className="btn btn-ghost bg-green-700  text-white" onClick={handleApprove} disabled={isDisabled || status !== 'pending'}><FaHandHolding></FaHandHolding></button></td>
+                                <td> <button className="btn btn-ghost bg-green-700  text-white" onClick={() => handleApprove(course._id)} disabled={isDisabled || status !== 'pending'}><FaHandHolding></FaHandHolding></button></td>
                                 <td> <button className="btn btn-ghost bg-red-600  text-white" onClick={handleDeny} disabled={isDisabled || status !== 'pending'}><FaTrashAlt></FaTrashAlt></button></td>
                                 <td> <button className="btn btn-ghost bg-blue-400  text-white" onClick={handleSendFeedback} disabled={isDisabled}><FaBackspace></FaBackspace></button></td>
                                 <FeedbackModal
@@ -96,3 +100,4 @@ const ManageClasses = () => {
 };
 
 export default ManageClasses;
+

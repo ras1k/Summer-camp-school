@@ -38,6 +38,7 @@ const MySelectedClasses = () => {
             }
         })
     }
+
     return (
         <div className="w-full h-full ms-10 mt-4">
             <Helmet>

@@ -4,6 +4,7 @@ import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useEffect } from "react";
 import { useState } from "react";
 import './CheckoutForm.css';
+import Swal from 'sweetalert2/dist/sweetalert2.all.js';
 
 
 const CheckoutForm = ({ cart, price }) => {
@@ -75,7 +76,7 @@ const CheckoutForm = ({ cart, price }) => {
         setProcessing(false)
         if (paymentIntent?.status === 'succeeded') {
             setTransactionId(paymentIntent.id);
-            // save payment information to the server
+            
             const payment = {
                 email: user?.email,
                 transactionId: paymentIntent.id,
@@ -84,14 +85,20 @@ const CheckoutForm = ({ cart, price }) => {
                 quantity: cart.length,
                 cartItems: cart.map(item => item._id),
                 menuItems: cart.map(item => item.menuItemId),
-                status: 'service pending',
+                status: 'Paid',
                 itemNames: cart.map(item => item.name)
             }
             axiosSecure.post('/payments', payment)
                 .then(res => {
                     console.log(res.data);
                     if (res.data.result.insertedId) {
-                        alert('Paid Successfully')
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Paid Successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
                     }
                 })
         }

@@ -80,21 +80,21 @@ const SignUp = () => {
                                     <label className="label">
                                         <span className="label-text text-white">Name</span>
                                     </label>
-                                    <input type="text" name='name' {...register("name", { required: true })} placeholder="name" className="input input-bordered" />
+                                    <input type="text" name='name' {...register("name", { required: true })} placeholder="name" className="input text-black input-bordered" />
                                     {errors.name && <span className='text-red-600'>This field is required</span>}
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text text-white">Email</span>
                                     </label>
-                                    <input type="text" name='email' {...register("email", { required: true })} placeholder="email" className="input input-bordered" />
+                                    <input type="text" name='email' {...register("email", { required: true })} placeholder="email" className="input text-black input-bordered" />
                                     {errors.email && <span className='text-red-600'>This field is required</span>}
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text text-white">Photo URl</span>
                                     </label>
-                                    <input type="text" name='photoURL' {...register("photoURL", { required: true })} placeholder="photo URL" className="input input-bordered" />
+                                    <input type="text" name='photoURL' {...register("photoURL", { required: true })} placeholder="photo URL" className="input text-black input-bordered" />
                                     {errors.photoURL && <span className='text-red-600'>This field is required</span>}
                                 </div>
                                 <div className="form-control">
@@ -104,17 +104,21 @@ const SignUp = () => {
                                     <input type="password" name='password' {...register("password", {
                                         required: true,
                                         minLength: 6,
-                                        // pattern: /^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])$/
+                                        pattern: {
+                                            value: /(?=.*[A-Z].*[!@#$&*])/,
+                                            message: 'Make sure one capital letter & one special character'
+                                        }
                                     })}
-                                        placeholder="password" className="input input-bordered" />
+                                        placeholder="password" className="input text-black input-bordered" />
                                     {errors.password?.type === 'required' && <span className='text-red-600'>This field is required</span>}
                                     {errors.password?.type === 'minLength' && <span className='text-red-600'>Password Must Be Six Characters</span>}
-                                    {/* {errors.password?.type === 'pattern' && <span className='text-red-600'>Password Must Be 1 upper case, 1 lower case, 1 special character</span>} */}
+                                    {errors.password?.type === 'pattern' && <span className='text-red-600'>Password Must Be 1 upper case, 1 special character</span>}
 
                                     <label className="label">
                                         <a href="#" className="label-text-alt link link-hover text-white mt-2">Forgot password?</a>
                                     </label>
                                 </div>
+
                                 <div className="form-control mt-6">
                                     <input className="btn btn-sm md:btn-md btn-outline hover:bg-white hover:text-black text-slate-200 btn-neutral" type="submit" value="Sign Up" /> <br />
                                     <SocialLogin />

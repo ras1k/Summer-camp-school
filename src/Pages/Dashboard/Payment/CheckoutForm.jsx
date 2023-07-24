@@ -50,7 +50,6 @@ const CheckoutForm = ({ cart, price }) => {
         }
         else {
             setCardError('');
-            // console.log('payment method', paymentMethod)
         }
 
         setProcessing(true)
@@ -78,6 +77,7 @@ const CheckoutForm = ({ cart, price }) => {
             setTransactionId(paymentIntent.id);
             
             const payment = {
+                name: user?.name,
                 email: user?.email,
                 transactionId: paymentIntent.id,
                 price,
@@ -86,7 +86,7 @@ const CheckoutForm = ({ cart, price }) => {
                 cartItems: cart.map(item => item._id),
                 menuItems: cart.map(item => item.menuItemId),
                 status: 'Paid',
-                itemNames: cart.map(item => item.name)
+                itemNames: cart.map(item => item.title)
             }
             axiosSecure.post('/payments', payment)
                 .then(res => {

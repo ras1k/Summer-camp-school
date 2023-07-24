@@ -13,7 +13,7 @@ const MyClass = () => {
     const [showFeedbackModal, setShowFeedbackModal] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/classes')
+        fetch('https://summer-camp-school-server-side-eight.vercel.app/classes')
             .then(res => res.json())
             .then(data => {
                 setCourses(data);

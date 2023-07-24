@@ -8,28 +8,28 @@ const ManageClasses = () => {
     const [status, setStatus] = useState('pending');
     const [isDisabled, setIsDisabled] = useState(false);
     const [showFeedbackModal, setShowFeedbackModal] = useState(false);
-    // const [checkIndex, setCheckIndex] = useState(null);
 
     useEffect(() => {
-        console.log('hello')
-        fetch('http://localhost:5000/classes')
+        fetch('https://summer-camp-school-server-side-eight.vercel.app/classes')
             .then(res => res.json())
             .then(data => {
                 setCourses(data);
-                console.log(data);
+                console.log('lol',data);
+                
             })
     }, []);
 
+
     const handleApprove = (id) => {
-        // setCheckIndex(id);
         setStatus('approved');
         setIsDisabled(true);
         console.log(id);
     };
 
-    const handleDeny = () => {
+    const handleDeny = (id) => {
         setStatus('denied');
         setIsDisabled(true);
+        console.log(id)
     };
 
     const handleSendFeedback = () => {
@@ -44,7 +44,6 @@ const ManageClasses = () => {
         <div className="w-full h-full ms-10 mt-4">
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
-                    {/* head */}
                     <thead>
                         <tr>
                             <th>#</th>
@@ -61,7 +60,6 @@ const ManageClasses = () => {
                         </tr>
                     </thead>
                     <tbody>
-
                         {courses.map(course =>
                             <tr key={course._id}>
                                 <td>
@@ -76,14 +74,14 @@ const ManageClasses = () => {
                                         </div>
                                     </div>
                                 </td>
-                                <td className="text-right">{course.title}</td>
-                                <td className="text-right">{course.instructor}</td>
-                                <td className="text-right">{course.email}</td>
-                                <td className="text-right">{course.availableSeats}</td>
-                                <td className="text-right">${course.price}</td>
-                                <td className="text-right">{status}</td>
+                                <td className="">{course.title}</td>
+                                <td className="">{course.instructor}</td>
+                                <td className="">{course.email}</td>
+                                <td className="">{course.availableSeats}</td>
+                                <td className="">${course.price}</td>
+                                <td className="">{status}</td>
                                 <td> <button className="btn btn-ghost bg-green-700  text-white" onClick={() => handleApprove(course._id)} disabled={isDisabled || status !== 'pending'}><FaHandHolding></FaHandHolding></button></td>
-                                <td> <button className="btn btn-ghost bg-red-600  text-white" onClick={handleDeny} disabled={isDisabled || status !== 'pending'}><FaTrashAlt></FaTrashAlt></button></td>
+                                <td> <button className="btn btn-ghost bg-red-600  text-white" onClick={() =>handleDeny(course._id)} disabled={isDisabled || status !== 'pending'}><FaTrashAlt></FaTrashAlt></button></td>
                                 <td> <button className="btn btn-ghost bg-blue-400  text-white" onClick={handleSendFeedback} disabled={isDisabled}><FaBackspace></FaBackspace></button></td>
                                 <FeedbackModal
                                     isOpen={showFeedbackModal}

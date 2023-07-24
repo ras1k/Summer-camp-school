@@ -6,7 +6,7 @@ const MyEnrolledClasses = () => {
 
     useEffect(() => {
         console.log('hello')
-        fetch('http://localhost:5000/classes')
+        fetch('https://summer-camp-school-server-side-eight.vercel.app/classes')
             .then(res => res.json())
             .then(data => {
                 setCourses(data);
@@ -18,7 +18,6 @@ const MyEnrolledClasses = () => {
         <div className="w-full h-full ms-10 mt-4">
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
-                    {/* head */}
                     <thead>
                         <tr>
                             <th>#</th>
@@ -37,6 +36,9 @@ const MyEnrolledClasses = () => {
                                             <div className="mask mask-squircle w-12 h-12">
                                                 <img src={course.image} alt="Avatar Tailwind CSS Component" />
                                             </div>
+                                        </div>
+                                        <div>
+                                            <div className="font-bold">{course.name}</div>
                                         </div>
                                     </div>
                                 </td>

@@ -58,7 +58,7 @@ const Header = ({ toggleTheme }) => {
                     </> :
                         <Link to='/login'><button className="btn btn-sm md:btn-md btn-outline hover:bg-white hover:text-black text-slate-200 btn-neutral">Login</button></Link>
                     }
-                    <div className="ml-7 lg:ml-0"> <button className="btn btn-sm md:btn-md btn-outline hover:bg-white hover:text-black text-slate-200 btn-neutral ml-4" onClick={toggleTheme}>Theme</button></div>
+                    <div className="ml-7 lg:ml-0"> <button className="btn btn-sm md:btn-md btn-outline hover:bg-white hover:text-black text-slate-200 btn-neutral lg:ml-4" onClick={toggleTheme}>Theme</button></div>
                 </div>
             </div>
         </div>

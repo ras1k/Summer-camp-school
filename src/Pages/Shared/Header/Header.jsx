@@ -3,7 +3,7 @@ import logo from '../../../assets/CSM+LOGO.png';
 import useAuth from "../../../hooks/useAuth";
 import Tilt from 'react-parallax-tilt';
 
-const Header = () => {
+const Header = ({ toggleTheme }) => {
     const { user, logOut } = useAuth();
     const handleLogOut = () => {
         logOut()
@@ -56,7 +56,9 @@ const Header = () => {
                     {user?.email ? <>
                         <button className="btn btn-outline hover:bg-white hover:text-black text-slate-200 btn-neutral" onClick={handleLogOut}>Logout</button>
                     </> :
-                        <Link to='/login'><button className="btn btn-sm md:btn-md btn-outline hover:bg-white hover:text-black text-slate-200 btn-neutral">Login</button></Link>}
+                        <Link to='/login'><button className="btn btn-sm md:btn-md btn-outline hover:bg-white hover:text-black text-slate-200 btn-neutral">Login</button></Link>
+                    }
+                    <div className="ml-7 lg:ml-0"> <button className="btn btn-sm md:btn-md btn-outline hover:bg-white hover:text-black text-slate-200 btn-neutral ml-4" onClick={toggleTheme}>Theme</button></div>
                 </div>
             </div>
         </div>

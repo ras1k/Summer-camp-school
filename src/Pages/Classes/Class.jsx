@@ -58,10 +58,10 @@ const Class = ({ course }) => {
             <div className="mb-2 p-4 lg:p-0">
                 <img src={image} className="rounded-lg" alt="" />
                 <div className="mt-4 h-[150px]">
-                    <p className="text-black text-2xl font-bold">{title}</p>
-                    <p className="text-black text-xl">Instructor: {instructor}</p>
-                    <p className="text-black text-xl">Seats: {availableSeats}</p>
-                    <p className="text-black text-xl">Price: {price}</p>
+                    <p className=" text-2xl font-bold">{title}</p>
+                    <p className=" text-xl">Instructor: {instructor}</p>
+                    <p className=" text-xl">Seats: {availableSeats}</p>
+                    <p className=" text-xl">Price: {price}</p>
                 </div>
                 <Tilt>
                     <div className="text-center">

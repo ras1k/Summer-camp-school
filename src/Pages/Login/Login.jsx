@@ -48,7 +48,7 @@ const Login = () => {
             <Helmet>
                 <title>Cascade School of Music | Login</title>
             </Helmet>
-            <div className="hero min-h-screen">
+            <div className="hero min-h-screen bg-white">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="mr-12 text-center lg:w-2/5">
                         <Tilt>

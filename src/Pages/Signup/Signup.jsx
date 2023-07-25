@@ -65,7 +65,7 @@ const SignUp = () => {
             <Helmet>
                 <title>Cascade School of Music | Signup</title>
             </Helmet>
-            <div className="hero min-h-screen">
+            <div className="hero min-h-screen bg-white">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="mr-12 lg:w-2/5">
                         <Tilt>

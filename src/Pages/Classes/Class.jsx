@@ -65,7 +65,7 @@ const Class = ({ course }) => {
                 </div>
                 <Tilt>
                     <div className="text-center">
-                        <button onClick={() => handleAddToCart(course)} className="btn btn-sm btn-outline border-0 border-e-4 border-s-4 border-b-4 text-black mt-2">Select</button>
+                        <button onClick={() => handleAddToCart(course)} className="btn btn-sm btn-outline border-0 border-e-4 border-s-4 border-b-4 mt-2">Select</button>
                     </div>
                 </Tilt>
             </div>

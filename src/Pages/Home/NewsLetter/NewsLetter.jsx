@@ -8,8 +8,8 @@ const NewsLetter = () => {
             <div className="hero mb-20 mt-10 rounded-lg">
                 <div className="hero-content flex-col gap-10 lg:flex-row-reverse">
                     <div className="text-center w-1/2 lg:text-left">
-                        <h1 className="md:text-5xl font-bold">Subscribe To Our NewsLetter</h1>
-                        <p className="py-6">We will send you updates about our new courses.</p>
+                        <h1 className="lg:text-5xl text-3xl font-bold">Subscribe To Our NewsLetter</h1>
+                        <p className="lg:py-6 py-2">We will send you updates about our new courses.</p>
                         <div className="">
                             <div className="form-control">
                                 <label className="label">

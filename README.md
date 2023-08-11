@@ -1,6 +1,6 @@
 # Name: Cascade Music School
 ## Live Link: [https://summer-school-camp-a853f.web.app/](https://summer-school-camp-a853f.web.app/)
-
+## Server Link: https://github.com/ras1k/bistro-boss-server
 ## Features:
 * Authentication
 * Authorization
@@ -15,6 +15,7 @@
 * Stripe/React
 * Tanstack query
 * Axios
+* JWT
 * Firebase
 * MomentJs
 * React-awesome-reveal

@@ -1,6 +1,9 @@
 # Name: Cascade Music School
-## Live Link: [https://summer-school-camp-a853f.web.app/](https://summer-school-camp-a853f.web.app/)
-## Server Link: https://github.com/ras1k/bistro-boss-server
+
+## Links
+* [Live Link](https://summer-school-camp-a853f.web.app/)
+* [Server Link](https://github.com/ras1k/bistro-boss-server)
+  
 ## Features:
 * Authentication
 * Authorization

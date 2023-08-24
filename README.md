@@ -2,7 +2,7 @@
 
 ## Links
 * [Live Link](https://summer-school-camp-a853f.web.app/)
-* [Server Link](https://github.com/ras1k/bistro-boss-server)
+* [Server Link](https://github.com/ras1k/summer-camp-school-server)
   
 ## Features:
 * Authentication

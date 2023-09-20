@@ -27,4 +27,4 @@
 * React-hook-form
 * React Icons
 * React-parallax-tilt
-* Sweetalert
+* Sweetalert2

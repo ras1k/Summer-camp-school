@@ -7,7 +7,7 @@
 ## Features:
 * Authentication
 * Authorization
-* Signup/Login system
+* Signup/Login
 * Payment System
 * Admin/User Dashboard
 
